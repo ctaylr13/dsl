@@ -90,5 +90,92 @@
       "name": "Big Flip",
       "mytrick": false
     }
+  ],
+  "grinds": [
+    {
+      "id": 1,
+      "name": "5050",
+      "mytrick": true
+    },
+    {
+      "id": 2,
+      "name": "5-0",
+      "mytrick": true
+    },
+    {
+      "id": 3,
+      "name": "Nose Grind",
+      "mytrick": true
+    },
+    {
+      "id": 4,
+      "name": "Smith Grind",
+      "mytrick": true
+    },
+    {
+      "id": 5,
+      "name": "Feeble Grind",
+      "mytrick": true
+    },
+    {
+      "id": 6,
+      "name": "Crooked Grind",
+      "mytrick": true
+    },
+    {
+      "id": 7,
+      "name": "Tailslide",
+      "mytrick": true
+    },
+    {
+      "id": 8,
+      "name": "Noseslide",
+      "mytrick": true
+    },
+    {
+      "id": 8,
+      "name": "Boardslide",
+      "mytrick": false
+    },
+    {
+      "id": 9,
+      "name": "Lipslide",
+      "mytrick": true
+    },
+    {
+      "id": 10,
+      "name": "Willy Grind",
+      "mytrick": true
+    },
+    {
+      "id": 11,
+      "name": "Suski Grind",
+      "mytrick": true
+    },
+    {
+      "id": 12,
+      "name": "Salad Grind",
+      "mytrick": false
+    },
+    {
+      "id": 13,
+      "name": "Overcrook",
+      "mytrick": false
+    },
+    {
+      "id": 14,
+      "name": "Bluntslide",
+      "mytrick": false
+    },
+    {
+      "id": 15,
+      "name": "Noseslide",
+      "mytrick": false
+    },
+    {
+      "id": 16,
+      "name": "Hurricane Grind",
+      "mytrick": false
+    }
   ]
 }
