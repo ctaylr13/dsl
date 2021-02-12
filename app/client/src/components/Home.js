@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
     render() {
-        return <div>Home Component</div>;
+        return (
+            <div>
+                <h1>Welcome Back, Brooklyn!</h1>
+                <Link to="/list/all">
+                    <Button>All Tricks</Button>
+                </Link>
+                <Link to="/list/my">
+                    <Button>My Tricks</Button>
+                </Link>
+                <Link to="/practice/log">
+                    <Button>Session Log</Button>
+                </Link>
+            </div>
+        );
     }
 }
 
