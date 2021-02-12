@@ -1,19 +1,94 @@
 {
-  "posts": [
+  "flat": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Ollie",
+      "mytrick": true
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Front 180 Ollie",
+      "mytrick": true
+    },
+    {
+      "id": 3,
+      "name": "Back 180 Ollie",
+      "mytrick": true
+    },
+    {
+      "id": 4,
+      "name": "Pop Shuv",
+      "mytrick": true
+    },
+    {
+      "id": 5,
+      "name": "Front Shuv",
+      "mytrick": true
+    },
+    {
+      "id": 6,
+      "name": "360 Shuv",
+      "mytrick": true
+    },
+    {
+      "id": 7,
+      "name": "Kickflip",
+      "mytrick": true
+    },
+    {
+      "id": 8,
+      "name": "Varial Flip",
+      "mytrick": true
+    },
+    {
+      "id": 8,
+      "name": "Hardflip",
+      "mytrick": false
+    },
+    {
+      "id": 9,
+      "name": "Front Side Flip",
+      "mytrick": true
+    },
+    {
+      "id": 10,
+      "name": "Back Side Flip",
+      "mytrick": true
+    },
+    {
+      "id": 11,
+      "name": "Heelflip",
+      "mytrick": true
+    },
+    {
+      "id": 12,
+      "name": "Varial Heel",
+      "mytrick": false
+    },
+    {
+      "id": 13,
+      "name": "Inward Heel",
+      "mytrick": false
+    },
+    {
+      "id": 14,
+      "name": "Front Side Heel",
+      "mytrick": false
+    },
+    {
+      "id": 15,
+      "name": "Back Side Heel",
+      "mytrick": false
+    },
+    {
+      "id": 16,
+      "name": "360 Flip",
+      "mytrick": false
+    },
+    {
+      "id": 17,
+      "name": "Big Flip",
+      "mytrick": false
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
