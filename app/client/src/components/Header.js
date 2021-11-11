@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Box } from '@mui/system';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
@@ -6,9 +7,9 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
     return (
-        <div>
+        <Box>
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
                     <Link to="/">
                         <Button color="inherit">Home</Button>
                     </Link>
@@ -23,6 +24,6 @@ export default function Header() {
                     </Link>
                 </Toolbar>
             </AppBar>
-        </div>
+        </Box>
     );
 }
