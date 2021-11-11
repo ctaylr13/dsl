@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { Box } from '@mui/system';
-import AllTricks from '../components/TrickList/AllTricks';
+import TrickListBody from '../components/TrickList/TrickListBody';
 import Header from './Header';
 import Home from './Home';
 import MyTricks from '../components/TrickList/TrickList';
@@ -36,8 +36,6 @@ const App = () => {
                         <Route path="/practice/routine/new" exact={true} component={NewRoutine} />
                         <Route path="/random" exact={true} component={Random} />
                         <Route path="/list" exact={true} component={TrickList} />
-                        <Route path="/list/all" exact={true} component={AllTricks} />
-                        <Route path="/list/my" exact={true} component={MyTricks} />
                     </Box>
                 </Box>
             </Router>
