@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
+import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
