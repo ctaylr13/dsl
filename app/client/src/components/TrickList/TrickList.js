@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/system';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import useSWR from 'swr';
 import { Button } from '@mui/material';
 import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import TrickListBody from './TrickListBody';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 const TrickList = () => {
     const { data: flatGroundTricks } = useSWR('http://localhost:3001/flat');
     const { data: grindTricks } = useSWR('http://localhost:3001/grinds');
     const [trickListType, setTrickListType] = useState('MyTricks')
+    const [isFlat, setIsFlat] = useState(true);
+
     let dataExist = false;
     if (flatGroundTricks && grindTricks) {
         dataExist = true;
@@ -19,21 +21,24 @@ const TrickList = () => {
     if (!dataExist) return <h1>Loading...</h1>;
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', paddingTop: '10px' }}>
                 {trickListType === 'MyTricks' ? <div>My Tricks</div> : <div>All Tricks</div>}
                 <FormGroup>
-                    <FormControlLabel control={<Switch defaultChecked />} label="Flat" />
+                    <Stack direction="row" spacing={1} alignItems="center" >
+                        <Typography>Grinds</Typography>
+                        <Switch defaultChecked onChange={() => setIsFlat(!isFlat)} />
+                        <Typography>Flat</Typography>
+                    </Stack>
                 </FormGroup>
                 {trickListType === 'MyTricks' ?
-                    <Button variant="contained" onClick={() => setTrickListType('AllTricks')}>All Tricks</Button>
+                    <Button variant="outlined" onClick={() => setTrickListType('AllTricks')}>All Tricks</Button>
                     :
-                    <Button variant="contained" onClick={() => setTrickListType('MyTricks')}>My Tricks</Button>
+                    <Button variant="outlined" onClick={() => setTrickListType('MyTricks')}>My Tricks</Button>
                 }
-
             </Box>
             <Box>
-                <TrickListBody flatGroundTricks={flatGroundTricks} grindTricks={grindTricks} />
+                <TrickListBody flatGroundTricks={flatGroundTricks} grindTricks={grindTricks} isFlat={isFlat} />
             </Box>
         </Box>
     )

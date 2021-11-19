@@ -1,29 +1,27 @@
-import React, { Component } from 'react';
 import { Box } from '@mui/system';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+const Header = () => {
     return (
         <Box>
             <AppBar position="static">
                 <Toolbar sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
-                    <Link to="/">
+                    <Link style={{ textDecoration: 'none' }} to="/">
                         <Button color="inherit">Home</Button>
                     </Link>
-                    <Link to="/list">
+                    <Link style={{ textDecoration: 'none' }} to="/list">
                         <Button color="inherit">Trick List</Button>
                     </Link>
-                    <Link to="/practice">
-                        <Button color="inherit">Practice</Button>
-                    </Link>
-                    <Link to="random">
-                        <Button color="inherit">Random</Button>
+                    <Link style={{ textDecoration: 'none' }} to="random">
+                        <Button color="inherit">Session</Button>
                     </Link>
                 </Toolbar>
             </AppBar>
         </Box>
     );
 }
+
+export default Header;

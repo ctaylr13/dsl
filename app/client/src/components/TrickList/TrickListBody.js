@@ -1,24 +1,19 @@
-import React from 'react';
 import { Box } from '@mui/system';
-import { Button, ButtonGroup } from '@mui/material';
+import UpdateTrickComponent from './UpdateTrickComponent';
 
-const TrickListBody = ({ flatGroundTricks, grindTricks }) => {
-    console.log('flatground Tricks', flatGroundTricks);
-    console.log('grindTricks', grindTricks);
+const TrickListBody = ({ flatGroundTricks, isFlat, grindTricks }) => {
     return (
         <Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <ButtonGroup>
-                    <Button>Regular</Button>
-                    <Button>Fakie</Button>
-                    <Button>Nollie</Button>
-                    <Button>Switch</Button>
-                </ButtonGroup>
-            </Box>
-            <Box>
-                {flatGroundTricks.map((trick) => (
-                    <div>{trick.name}</div>
-                ))}
+            <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', height: '80vh', }}>
+                {isFlat === true ?
+                    flatGroundTricks.map((trick) => (
+                        <UpdateTrickComponent trick={trick} type='flat' />
+
+                    ))
+                    : grindTricks.map((trick) => (
+                        <UpdateTrickComponent trick={trick} type='grinds' />
+                    ))
+                }
             </Box>
         </Box>
     )
