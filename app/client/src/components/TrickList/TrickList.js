@@ -11,7 +11,6 @@ import Typography from '@mui/material/Typography';
 const TrickList = () => {
     const { data: flatGroundTricks } = useSWR('http://localhost:3001/flat');
     const { data: grindTricks } = useSWR('http://localhost:3001/grinds');
-    const [trickListType, setTrickListType] = useState('MyTricks')
     const [isFlat, setIsFlat] = useState(true);
 
     let dataExist = false;
@@ -23,7 +22,6 @@ const TrickList = () => {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', paddingTop: '10px' }}>
-                {trickListType === 'MyTricks' ? <div>My Tricks</div> : <div>All Tricks</div>}
                 <FormGroup>
                     <Stack direction="row" spacing={1} alignItems="center" >
                         <Typography>Grinds</Typography>
@@ -31,11 +29,7 @@ const TrickList = () => {
                         <Typography>Flat</Typography>
                     </Stack>
                 </FormGroup>
-                {trickListType === 'MyTricks' ?
-                    <Button variant="outlined" onClick={() => setTrickListType('AllTricks')}>All Tricks</Button>
-                    :
-                    <Button variant="outlined" onClick={() => setTrickListType('MyTricks')}>My Tricks</Button>
-                }
+
             </Box>
             <Box>
                 <TrickListBody flatGroundTricks={flatGroundTricks} grindTricks={grindTricks} isFlat={isFlat} />
