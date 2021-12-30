@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
 import { Box } from '@mui/system';
 import MenuItem from '@mui/material/MenuItem';
@@ -11,19 +11,22 @@ const UpdateTrickComponent = ({ trick, type }) => {
   const [myTrick, setMyTrick] = useState(trick.mytrick);
   const updateFlatGround = (event) => {
     setMyTrick(event.target.value);
+    updateMyTrick(event.target.value);
   };
 
-  const updateMyTrick = () => {
+  const updateMyTrick = (value) => {
     const data = {
       id: trick.id,
-      name: "Ollie",
-      mytrick: myTrick
+      name: trick.name,
+      mytrick: value,
     }
     axios.put(`http://localhost:3001/${type}/${trick.id}`, data)
       .then(res => console.log(res))
       .catch(err => console.log(err));
-
   }
+
+
+
   return (
     <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '5px', padding: '5px', width: '200px', }}>
       <div key={trick.id}>{trick.name}</div>
@@ -34,7 +37,7 @@ const UpdateTrickComponent = ({ trick, type }) => {
             {trick.mytrick === 'true' ? <MenuItem value={'false'}>false</MenuItem> : <MenuItem value={'true'}>true</MenuItem>}
           </Select>
         </FormControl>
-        <Button sx={{ height: '30px' }} variant="outlined" onClick={() => updateMyTrick()}>Save</Button>
+        {/* <Button sx={{ height: '30px' }} variant="outlined" onClick={() => updateMyTrick()}>Save</Button> */}
 
       </Box>
 

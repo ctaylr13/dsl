@@ -8,7 +8,7 @@
     {
       "id": 2,
       "name": "Front 180 Ollie",
-      "mytrick": "true"
+      "mytrick": "false"
     },
     {
       "id": 3,
@@ -17,8 +17,8 @@
     },
     {
       "id": 4,
-      "name": "Pop Shuv",
-      "mytrick": "true"
+      "name": "Ollie",
+      "mytrick": "false"
     },
     {
       "id": 5,
